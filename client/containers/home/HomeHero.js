@@ -4,7 +4,7 @@ import HeroImg from "./HeroImg";
 import { ThemeContext } from "../../context/ThemeContext";
 import Typewriter from "typewriter-effect";
 
-import HeroPara from "./HeroPara";
+// import HeroPara from "./HeroPara";
 
 function HomeHero() {
   const [showText, setShowText] = useState(false);
@@ -53,7 +53,6 @@ function HomeHero() {
           />
         </h1>
         {/* className="shape-hero missionimg" */}
-        <HeroPara showText={showText} />
       </article>
     </section>
   );
@@ -127,7 +126,7 @@ function heroStyles(showText) {
 
       h1 {
         margin-bottom: 1.2rem;
-        color: var(--accent);
+        color: var(--darkGreen);
         font-size: 2rem;
 
         @media (min-width: 900px) {

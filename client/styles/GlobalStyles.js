@@ -1,70 +1,53 @@
 import React from "react";
 import { jsx, css, Global, useTheme } from "@emotion/react"; /** @jsx jsx */
+import { stylesReset } from "./stylesReset";
 
 export function GlobalStyles() {
-  const {
-    mainColor: {
-      primary,
-      secondary,
-      tertiary,
-      accent,
-      secondaryAccent,
-      shadowColor,
-      emoBackground,
-    },
-  } = useTheme();
+  const { colors, background, typography } = useTheme();
+
   return (
     <Global
       styles={css`
-        * {
-          padding: 0;
-          margin: 0;
-          box-sizing: border-box;
-        }
+        @import url("https://fonts.googleapis.com/css2?family=Lato&family=Tangerine:wght@700&display=swap");
+
+        ${stylesReset};
 
         :root {
-          --headerHeight: 100px;
+          --headerHeight: 8, 5rem;
           --footerHeight: 100px;
           --innerRadius: 2em;
-          --dark: #515151;
-
-          --pink: #ea4c89;
-          --danger: #ff0e0e;
-
-          --blue: #7cc9ff;
-          --blue: ${secondaryAccent};
-          --darkBlue: ${primary};
-          --accent: ${accent};
-          --white: ${secondary};
-          --black: ${tertiary};
-          --shadowColor: ${shadowColor};
+          --brightGreen: ${colors.brightGreen};
+          --forestGreen: ${colors.forestGreen};
+          --darkGreen: ${colors.darkGreen};
+          --sand: ${colors.sand};
+          --offWhite: ${colors.offWhite};
+          --wood: ${colors.wood};
+          --white: ${colors.white};
+          --black: ${colors.black};
+          --tangarine: ${typography.typefaces.Tangarine};
+          --lato: ${typography.typefaces.Lato};
+          --body: ${typography.fontSize.body};
+          --title: ${typography.fontSize.title};
+          --subtitle: ${typography.fontSize.subtitle};
+          --h4: ${typography.fontSize.h4};
+          --h5: ${typography.fontSize.h5};
+          --helperText: ${typography.fontSize.helperText};
         }
 
         body,
         html {
           margin: 0;
           padding: 0;
-          font-family: "Alata", sans-serif;
-          font-size: 16px;
+          font-family: var(--lato);
+          )font-size: var(--body);
           color: var(--white);
           line-height: 1.6;
-          background-color: #1c2a34;
-          ${emoBackground};
+          ${background};
           transition: all 0.3s linear;
 
           @media (min-width: 900px) {
             font-size: 18px;
           }
-        }
-
-        img {
-          max-height: 100%;
-          display: block;
-        }
-
-        a {
-          text-decoration: none;
-          color: #404040;
         }
 
         .no-scroll {
@@ -79,34 +62,6 @@ export function GlobalStyles() {
         }
         .no-scrollbar::-webkit-scrollbar {
           display: none;
-        }
-
-        ////// Typography //////
-
-        .main-heading,
-        .main-heading-white,
-        .main-heading-no-shadow {
-          color: var(--accent);
-          font-size: 2rem;
-          text-shadow: none;
-        }
-
-        .main-heading-white {
-          color: var(--white);
-        }
-
-        .main-heading {
-          text-shadow: 0.5px 0.5px 70px var(--shadowColor);
-        }
-
-        .sub-heading {
-          font-size: 1.4rem;
-        }
-
-        .date {
-          grid-column: 2;
-          font-size: 0.8rem;
-          color: var(--blue);
         }
 
         .truncate {
@@ -147,14 +102,6 @@ export function GlobalStyles() {
               minmax(10em, 1fr) repeat(12, minmax(50px, 125px))
               minmax(10em, 1fr);
           }
-        }
-
-        .main-layout {
-          margin: 0 auto;
-          display: grid;
-          grid-template-rows:
-            var(--headerHeight) auto
-            var(--footerHeight);
         }
       `}
     />

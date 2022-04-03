@@ -27,7 +27,7 @@ function logoStyles(active) {
     svg {
       width: 100%;
       .word {
-        stroke: var(--white);
+        stroke: var(--darkGreen);
       }
       stroke: var(--black);
     }

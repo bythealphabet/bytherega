@@ -10,7 +10,7 @@ export function Hamburger({ active = true, setActive, position }) {
       aria-label="Open main menu"
     >
       <label htmlFor="navi-toggle" hidden>
-        <span>&nbsp;</span>
+        <span></span>
       </label>
     </div>
   );

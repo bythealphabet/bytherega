@@ -11,11 +11,10 @@ import { FaGithub } from "react-icons/fa";
 
 function footerStyle() {
   return css`
-    background-color: var(--dark);
+    background-color: #fff;
     grid-column: 1 / -1;
     grid-row: -1;
     min-height: 200px;
-
     padding: 2em 0;
 
     grid-template-rows: 1fr 50px 50px;
@@ -29,8 +28,7 @@ function footerStyle() {
       align-self: center;
       justify-self: center;
       text-align: center;
-
-      color: rgba(250, 250, 250, 0.7);
+      color: var(--darkGreen);
 
       @media (min-width: 900px) {
         text-align: left;

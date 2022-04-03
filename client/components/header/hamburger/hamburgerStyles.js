@@ -32,7 +32,7 @@ export function hamburgerStyles(active) {
 
       span {
         position: relative;
-        background-color: ${active ? "transparent" : "var(--white)"};
+        background-color: ${active ? "transparent" : "var(--darkGreen)"};
         width: 2.5em;
         height: 0.25em;
         display: inline-block;
@@ -43,7 +43,7 @@ export function hamburgerStyles(active) {
         :before,
         :after {
           content: "";
-          background-color: var(--white);
+          background-color: var(--darkGreen);
           width: 2.5em;
           height: 0.25em;
           display: inline-block;

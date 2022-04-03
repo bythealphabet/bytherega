@@ -9,10 +9,10 @@ import { stopScroll, startScroll } from "./header-helper";
 import SunMoon from "../../../components/header/icons/LightDark";
 
 const links = [
-  // { name: "Articles", path: "/articles", btn: false },
-  { name: "Projects", path: "/projects", btn: false },
-  { name: "About", path: "/about", btn: false },
-  { name: "Contact", path: "/contact", btn: true },
+  { name: "Advies", path: "/projects", btn: false },
+  { name: "Doelstellingen", path: "/", btn: false },
+  { name: "Producten", path: "/", btn: false },
+  { name: "Wetenschap", path: "/", btn: false },
 ];
 
 function Header() {
@@ -35,24 +35,28 @@ function Header() {
       <Logo
         active={active}
         position={css`
-          grid-column: 2 / span 2;
+          grid-column: 2 / -2;
           grid-row: 1 / -1;
+          align-self: center;
+          justify-self: center;
           margin-top: 0.3em;
+          width: 100px;
+          height: 100px;
 
           @media (min-width: 900px) {
-            grid-column: 2 / span 2;
+            grid-column: 2 / -2;
           }
         `}
       />
       <SunMoon
         position={css`
           z-index: 12;
-          grid-column: 5 / span 1;
+          grid-column: 6 / span 1;
           grid-row: 1 / -1;
           justify-self: center;
           align-self: center;
           @media (min-width: 900px) {
-            grid-column: 7 / span 2;
+            grid-column: 14 / span 2;
           }
         `}
       />

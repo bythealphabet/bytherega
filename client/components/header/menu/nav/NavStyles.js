@@ -26,8 +26,8 @@ export function navStyle() {
 
       li {
         @media (min-width: 900px) {
-          margin: 0 0.7em;
-          padding: 0 0.7em;
+          margin: 0 0.4em;
+          padding: 0 0.4em;
           border: none;
 
           :hover {
@@ -43,29 +43,28 @@ export function navStyle() {
         .nav-btn {
           cursor: pointer;
           display: inline-block;
-          padding: 0.5em 1.2em;
-          font-size: 1.3rem;
+          padding: 0.5em 1em;
           font-weight: 700;
           text-align: center;
           background: var(--blue);
           color: var(--darkBlue);
 
-          border-radius: 6px;
+          border-radius: 3rem;
           width: 100%;
           margin: 0.5em 0;
           transition: all 0.2s ease-in-out;
 
           @media (min-width: 900px) {
-            font-size: 0.8rem;
-            border: solid 0.2em var(--accent);
+            font-size: 0.6rem;
+            border: solid 0.2em var(--brightGreen);
             color: var(--accent);
             background: transparent;
           }
 
           :hover,
           :focus {
-            color: var(--white);
-            background: var(--pink);
+            color: var(--forestGreen);
+            background: var(--darkGreen);
             /* border: solid 0.2em var(--pink); */
           }
         }
@@ -74,18 +73,18 @@ export function navStyle() {
           text-decoration: none;
           display: flex;
           justify-content: space-between;
-          font-size: 2rem;
+          font-size: var(--body);
           text-transform: capitalize;
-          color: white;
+          color: var(--darkGreen);
           transition: color 0.2s ease-in-out;
 
           :hover {
-            color: var(--pink);
+            color: var(--brightGreen);
           }
 
           @media (min-width: 900px) {
-            font-size: 1.2rem;
-            color: var(--white);
+            font-size: var(--body);
+            color: var(--darkGreen);
             text-align: center;
             font-weight: bold;
           }
