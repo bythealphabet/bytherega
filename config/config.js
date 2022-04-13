@@ -7,7 +7,7 @@ const config = {
   jwtSecret: process.env.JWT_SECRET || "your_secret_key",
   jwtAcountActivation:
     process.env.JWT_ACCOUNT_ACTIVATION || "acount_activation",
-  sendGridApiKey: process.env.SENDGRID_API_KEY,
+  sendGridApiKey: process.env.SENDGRID_API_KEY || "your_api_key",
   mongoUri:
     process.env.MONGODB_URI ||
     process.env.MONGO_HOST ||

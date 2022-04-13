@@ -5,9 +5,12 @@ import compress from "compression";
 import cors from "cors";
 import helmet from "helmet";
 import template from "../template";
+// import typeDefs from "./shema";
+// import resolvers from "./resolvers";
 import authRoutes from "./routes/auth.routes";
 import contactRoutes from "./routes/contact.routes";
 import userRoutes from "./routes/user.routes";
+import { ApolloServer } from "apollo-server-express";
 
 import devBundle from "../build-utils/devBundle";
 
@@ -30,6 +33,27 @@ app.use(
 );
 
 app.use(cors());
+
+//types query/mutation/subscription
+const typeDefs = `
+    type Query {
+        totalPosts: Int!
+    }
+`;
+
+//resolvers
+const resolvers = {
+  Query: {
+    totalPosts: () => 42,
+  },
+};
+
+const apolloServer = await new ApolloServer({
+  typeDefs,
+  resolvers,
+});
+
+apolloServer.applyMiddleware({ app });
 
 const CURRENT_WORKING_DIR = process.cwd();
 app.use("/dist", express.static(path.join(CURRENT_WORKING_DIR, "dist")));
